@@ -127,6 +127,8 @@ module Digitalocean
 
   def request_and_respond(url)
     resp = Digitalocean.request.get url
+    puts url.inspect
+    puts resp.inspect
     hash = RecursiveOpenStruct.new(resp.body, :recurse_over_arrays => true)
 
     hash
